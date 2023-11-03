@@ -6,7 +6,8 @@ import "typeface-cormorant";
 const theme = createTheme({
   typography: {
     allVariants: {
-      fontFamily: "Cormorant,sans-serif,Arial,,Roboto,Fjalla One,Monospace",
+      fontFamily:
+        "Cormorant,sans-serif,Arial,,Roboto,Fjalla One,Monospace,Bebas Neue ",
       textTransform: "none",
     },
   },

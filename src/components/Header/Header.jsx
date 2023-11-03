@@ -25,7 +25,7 @@ function Header() {
               component="div"
               sx={{
                 fontSize: `3rem`,
-                fontFamily: "Cormorant",
+                fontFamily: "Bebas Neue",
                 display: { xs: "block", sm: "block" },
               }}
             >
@@ -67,22 +67,13 @@ function Header() {
             </Box>
             <Box>
               <NavLink
-                to={"/contact/email"}
+                to={"/more/projects"}
                 className={classes.headerLinks}
                 style={({ isActive }) => ({
                   textDecoration: isActive ? "underline" : "none",
                 })}
               >
-                Resume
-              </NavLink>
-              <NavLink
-                to={"/contact/email"}
-                className={classes.headerLinks}
-                style={({ isActive }) => ({
-                  textDecoration: isActive ? "underline" : "none",
-                })}
-              >
-                Projects
+                More
               </NavLink>
             </Box>
           </Toolbar>

@@ -26,7 +26,7 @@ function About() {
           >
             {selectedAbout?.title}
           </Typography>
-          <Box sx={{ height: "70vh", overflow: "auto", pb: 6, pr: 2 }}>
+          <Box sx={{ height: "69vh", overflow: "auto", pb: 6, pr: 2 }}>
             <Typography
               variant="p"
               sx={{
