@@ -2,12 +2,13 @@ import React from "react";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { purple, grey } from "@mui/material/colors";
 import "typeface-cormorant";
+import "@fontsource/roboto";
 
 const theme = createTheme({
   typography: {
     allVariants: {
       fontFamily:
-        "Cormorant,sans-serif,Arial,,Roboto,Fjalla One,Monospace,Bebas Neue ",
+        "Cormorant,sans-serif,Arial,roboto,Fjalla One,Monospace,Bebas Neue ",
       textTransform: "none",
     },
   },
@@ -30,6 +31,16 @@ const theme = createTheme({
           "@media (min-width: 600px)": {
             py: "40px",
           },
+        },
+      },
+    },
+    MuiOutlinedInput: {
+      defaultProps: {
+        sx: {
+          fontSize: "15px",
+          color: "#222",
+          opacity: "85%",
+          fontFamily: "Fjalla One",
         },
       },
     },

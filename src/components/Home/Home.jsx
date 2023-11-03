@@ -3,6 +3,7 @@ import { TypeAnimation } from "react-type-animation";
 import { Box, Grid, Slide, Paper, Typography, Fade } from "@mui/material";
 import Sidebar from "./Sidebar";
 import hero from "../../assets/hero.jpg";
+import Footer from "../Footer/Footer";
 
 function Home() {
   const [firstAnimationFinished, setFirstAnimationFinished] = useState(false);
@@ -133,6 +134,7 @@ function Home() {
           </Box>
         </Grid>
       </Grid>
+      <Footer />
     </>
   );
 }

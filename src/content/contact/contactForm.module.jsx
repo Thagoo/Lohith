@@ -7,6 +7,7 @@ import {
   InputLabel,
   Snackbar,
   TextField,
+  Typography,
 } from "@mui/material";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -14,6 +15,12 @@ import { setFieldValue, resetForm } from "../../app/contactFormSlice";
 import * as yup from "yup";
 import { useEffect, useState } from "react";
 
+const typographyStyle = {
+  fontSize: "15px",
+
+  opacity: "85%",
+  fontFamily: "Fjalla One",
+};
 const validationSchema = yup.object().shape({
   name: yup.string().required("Name is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
@@ -109,7 +116,11 @@ export default function ContactForm() {
       />
 
       <FormControl variant="standard">
-        <InputLabel htmlFor="component-simple" color="secondary">
+        <InputLabel
+          htmlFor="component-simple"
+          color="secondary"
+          sx={typographyStyle}
+        >
           Name
         </InputLabel>
         <Input
@@ -119,13 +130,21 @@ export default function ContactForm() {
           value={contactForm.name}
           error={!!errors.name}
           onChange={(e) => handleInputChange(e)}
+          sx={typographyStyle}
         />{" "}
-        <FormHelperText error>{errors.name}</FormHelperText>
+        <FormHelperText error sx={typographyStyle}>
+          {errors.name}
+        </FormHelperText>
       </FormControl>
       <FormControl variant="standard">
-        <InputLabel htmlFor="component-simple" color="secondary">
+        <InputLabel
+          htmlFor="component-simple"
+          color="secondary"
+          sx={typographyStyle}
+        >
           Email
         </InputLabel>
+
         <Input
           id="component-simple"
           color="secondary"
@@ -133,10 +152,13 @@ export default function ContactForm() {
           value={contactForm.email}
           error={!!errors.email}
           onChange={(e) => handleInputChange(e)}
+          sx={typographyStyle}
         />
-        <FormHelperText error>{errors.email}</FormHelperText>
+        <FormHelperText error sx={typographyStyle}>
+          {errors.email}
+        </FormHelperText>
       </FormControl>
-      <FormControl fullWidth sx={{ mt: "10px", height: "100%" }}>
+      <FormControl fullWidth sx={{ mt: "10px" }}>
         <TextField
           multiline
           minRows={4}
@@ -144,12 +166,15 @@ export default function ContactForm() {
           name="message"
           color="secondary"
           margin="normal"
-          label={"Message"}
+          label={<Typography sx={typographyStyle}>Message</Typography>}
           value={contactForm.message}
           error={!!errors.message}
-          helperText={errors.message}
+          helperText={
+            <Typography sx={typographyStyle}>{errors.message}</Typography>
+          }
           onChange={(e) => handleInputChange(e)}
-        ></TextField>
+          sx={typographyStyle}
+        />
       </FormControl>
       <Button
         disabled={disableSubmit}
@@ -159,6 +184,7 @@ export default function ContactForm() {
         sx={{
           boxShadow: `none`,
           textTransform: `none`,
+          fontFamily: `Fjalla One`,
           px: 3,
           mt: 2,
         }}

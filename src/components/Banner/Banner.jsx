@@ -2,19 +2,12 @@ import React from "react";
 import { Box, Grid, Paper } from "@mui/material";
 import Sidebar from "../Home/Sidebar";
 import hero from "../../assets/hero.jpg";
+import Footer from "../Footer/Footer";
 
 function Banner({ children }) {
   return (
     <>
-      <Grid
-        container
-        component={Paper}
-        square
-        minHeight={"70vh"}
-        maxHeight={"70vh"}
-        elevation={10}
-        sx={{ overflow: "hidden" }}
-      >
+      <Grid container component={Paper} square elevation={10}>
         <Grid item xs={12} md={9}>
           {children}
         </Grid>
@@ -35,6 +28,7 @@ function Banner({ children }) {
           </Box>
         </Grid>
       </Grid>
+      <Footer />
     </>
   );
 }

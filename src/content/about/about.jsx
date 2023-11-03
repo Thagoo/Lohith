@@ -1,36 +1,83 @@
+import {
+  List,
+  ListItem,
+  ListItemText,
+  TextField,
+  Typography,
+} from "@mui/material";
 import Skills from "./skills.module";
 
 export const aboutContent = [
   {
     key: "me",
     title: "Hi, I am Lohith",
-    content: `A passionate full-stack web developer . As a
-    perpetual learner in the realm of code and technology, I find immense
-    joy in crafting web solutions that merge functionality and aesthetics.
-    My journey as a developer is just beginning, but my dedication to
-    honing my skills knows no bounds. In addition to web development, I've
-    delved into the intricate world of AOSP (Android Open Source Project)
-    development, where I've had the privilege of contributing to the
-    open-source Android ecosystem. My love for Linux goes hand in hand
-    with my fascination for open-source ideals, and I'm always eager to
-    explore new horizons in the Linux universe. For me, programming is
-    more than a profession; it's a true passion. I believe in the
-    transformative power of technology to enhance our lives and drive
-    innovation. I strive for clean, efficient code that not only solves
-    problems but does so with elegance and simplicity. When I'm not
-    immersed in the world of code, I enjoy [mention a personal interest or
-    hobby related to programming or technology], and you'll often find me
-    exploring the latest developments in the tech world. This portfolio is
-    a canvas of my journey, my projects, and my commitment to continuous
-    improvement. I'm excited to connect with fellow enthusiasts, potential
-    collaborators, and anyone who shares my enthusiasm for the digital
-    domain. Let's embark on this journey together. Feel free to explore my
-    work and get in touch to discuss opportunities, ideas, or to simply
-    geek out about code and tech. Together, we can shape the digital
-    future." This version highlights your MERN stack development skills,
-    your involvement in AOSP development, and your passion for Linux, all
-    while expressing your love for programming and technology. It invites
-    visitors to connect with you and explore your portfolio.`,
+    content: (
+      <>
+        <List>
+          <ListItem sx={{ pl: 0, pb: 2 }}>
+            <Typography
+              variant="h5"
+              sx={{
+                fontSize: "20px",
+
+                color: "#222",
+                opacity: "85%",
+                fontFamily: "Fjalla One",
+              }}
+            >
+              A passionate full-stack web developer .
+            </Typography>
+          </ListItem>
+          <Typography
+            variant="p"
+            sx={{
+              fontSize: "18px",
+              color: "#222",
+              opacity: "60%",
+              fontFamily: "Fjalla One",
+            }}
+          >
+            You might know me from
+          </Typography>
+          <ListItem
+            sx={{
+              listStyleType: "disc",
+              display: "list-item",
+            }}
+          >
+            <Typography
+              variant="p"
+              sx={{
+                fontSize: "18px",
+                color: "#222",
+                opacity: "85%",
+                fontFamily: "Fjalla One",
+              }}
+            >
+              Android Custom Rom and kernel such as Triton kernel
+            </Typography>
+          </ListItem>
+          <ListItem
+            sx={{
+              listStyleType: "disc",
+              display: "list-item",
+            }}
+          >
+            <Typography
+              variant="p"
+              sx={{
+                fontSize: "18px",
+                color: "#222",
+                opacity: "85%",
+                fontFamily: "Fjalla One",
+              }}
+            >
+              MSM8937 Developement Communinty
+            </Typography>
+          </ListItem>
+        </List>
+      </>
+    ),
   },
   {
     key: "thagoo",
@@ -49,15 +96,7 @@ export const aboutContent = [
   {
     key: "language",
     title: "Spoken Languages",
-    content: `I am proficient in three languages: Kannada, English, and Hindi, each holding a special place in my life.
-
-    Kannada, my mother tongue, is a rich and vibrant language. It connects me to my cultural roots, enabling me to communicate with my family and embrace the traditions of Karnataka. Speaking Kannada allows me to express my emotions and thoughts with authenticity and warmth.
-    
-    English, on the other hand, has opened up a world of opportunities for me. It's the language I use for education, work, and international communication. It empowers me to access a vast reservoir of knowledge, connect with people from diverse backgrounds, and explore a multitude of cultures and ideas.
-    
-    Hindi, as a language I've acquired fluency in, bridges linguistic gaps in India. It helps me connect with people from different parts of the country and fosters a sense of unity and understanding. Hindi cinema and literature have also enriched my cultural awareness.
-    
-    In essence, these three languages form a tapestry of my identity, connecting me to my heritage, providing me access to the world, and facilitating connections with people across India. They are a source of pride, unity, and endless learning.`,
+    content: `My mother tongue is Kannada, I am fluent in English and I can understand Hindi`,
   },
 
   {

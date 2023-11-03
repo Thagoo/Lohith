@@ -6,7 +6,7 @@ import { contactContent } from "../../content/contact/contact";
 
 function Contact() {
   const { contactType } = useParams();
-  const selectedcontact = contactContent.find(
+  const selectedContact = contactContent.find(
     (contact) => contact.key === contactType
   );
 
@@ -27,7 +27,7 @@ function Contact() {
                 fontFamily: "Fjalla One",
               }}
             >
-              {selectedcontact.title}
+              {selectedContact?.title}
             </Typography>
             <Typography
               variant="p"
@@ -38,7 +38,7 @@ function Contact() {
                 fontFamily: "Fjalla One",
               }}
             >
-              {selectedcontact.content}
+              {selectedContact?.content}
             </Typography>
           </Box>
         </Grid>

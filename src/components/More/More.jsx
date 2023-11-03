@@ -27,17 +27,8 @@ function More() {
             >
               {selectedmore.title}
             </Typography>
-            <Typography
-              variant="p"
-              sx={{
-                fontSize: "15px",
-                color: "#222",
-                opacity: "85%",
-                fontFamily: "Fjalla One",
-              }}
-            >
-              {selectedmore.content}
-            </Typography>
+
+            {selectedmore.content}
           </Box>
         </Grid>
       </Grid>
