@@ -2,7 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import { moreContent } from "../../content/more/more";
+import { careerContent } from "../../content/career/career";
 
 function Sidebar() {
   const preventDefault = (event) => event.preventDefault();
@@ -30,9 +30,9 @@ function Sidebar() {
           }}
           onClick={preventDefault}
         >
-          {moreContent.map((more) => (
+          {careerContent.map((career) => (
             <NavLink
-              to={`/more/${more.key}`}
+              to={`/career/${career.key}`}
               style={({ isActive }) => ({
                 color: isActive ? "#a27eaf" : "white",
               })}
@@ -45,7 +45,7 @@ function Sidebar() {
                 }}
                 underline="hover"
               >
-                {more.key}
+                {career.key}
               </Link>
             </NavLink>
           ))}

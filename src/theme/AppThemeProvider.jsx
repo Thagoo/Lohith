@@ -5,6 +5,11 @@ import "typeface-cormorant";
 import "@fontsource/roboto";
 
 const theme = createTheme({
+  palette: {
+    buttonColor: {
+      main: "#61456a",
+    },
+  },
   typography: {
     allVariants: {
       fontFamily:
@@ -31,6 +36,18 @@ const theme = createTheme({
           "@media (min-width: 600px)": {
             py: "40px",
           },
+        },
+      },
+    },
+    MuiButton: {
+      defaultProps: {
+        sx: {
+          fontFamily: "Fjalla One",
+          color: "#F8DFFF",
+          background:
+            "linear-gradient(to right bottom, #3d2d43, #47324f, #52375b, #5d3b67, #684073);",
+          px: 10,
+          py: 1,
         },
       },
     },

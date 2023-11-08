@@ -26,11 +26,11 @@ function Header() {
               sx={{
                 fontSize: `3rem`,
                 fontFamily: "Bebas Neue",
-                display: { xs: "block", sm: "block" },
               }}
             >
               Lohith
             </Typography>
+
             <Box
               ml={10}
               sx={{
@@ -67,13 +67,13 @@ function Header() {
             </Box>
             <Box>
               <NavLink
-                to={"/more/projects"}
+                to={"/Career/projects"}
                 className={classes.headerLinks}
                 style={({ isActive }) => ({
                   textDecoration: isActive ? "underline" : "none",
                 })}
               >
-                More
+                Career
               </NavLink>
             </Box>
           </Toolbar>

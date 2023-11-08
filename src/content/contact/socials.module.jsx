@@ -3,6 +3,7 @@ import React from "react";
 import {
   FaDiscord,
   FaFacebook,
+  FaGithub,
   FaInstagram,
   FaLinkedin,
   FaReddit,
@@ -67,6 +68,14 @@ function Socials() {
               sx={{ width: "100%", color: `inherit` }}
             >
               <FaLinkedin className={classes.Icon} />
+            </IconButton>
+          </div>
+          <div style={{ width: "20%" }}>
+            <IconButton
+              href="https://github.com/thagoo"
+              sx={{ width: "100%", color: `inherit` }}
+            >
+              <FaGithub className={classes.Icon} />
             </IconButton>
           </div>
         </div>

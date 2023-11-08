@@ -1,6 +1,7 @@
 import Projects from "./projects.module";
+import Resume from "./resume.module";
 
-export const moreContent = [
+export const careerContent = [
   {
     key: "projects",
     title: "Projects",
@@ -8,7 +9,7 @@ export const moreContent = [
   },
   {
     key: "resume",
-    title: "Resume",
-    content: "",
+    title: "resume",
+    content: <Resume />,
   },
 ];

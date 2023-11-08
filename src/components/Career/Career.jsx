@@ -2,11 +2,13 @@ import { Box, Grid, Typography } from "@mui/material";
 import React from "react";
 import { useParams } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import { moreContent } from "../../content/more/more";
+import { careerContent } from "../../content/career/career";
 
-function More() {
-  const { moreType } = useParams();
-  const selectedmore = moreContent.find((more) => more.key === moreType);
+function Career() {
+  const { careerType } = useParams();
+  const selectedCareer = careerContent.find(
+    (career) => career.key === careerType
+  );
 
   return (
     <>
@@ -25,10 +27,10 @@ function More() {
                 fontFamily: "Fjalla One",
               }}
             >
-              {selectedmore.title}
+              {selectedCareer.title}
             </Typography>
 
-            {selectedmore.content}
+            {selectedCareer.content}
           </Box>
         </Grid>
       </Grid>
@@ -36,4 +38,4 @@ function More() {
   );
 }
 
-export default More;
+export default Career;

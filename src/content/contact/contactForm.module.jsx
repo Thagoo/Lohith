@@ -1,6 +1,7 @@
 import {
   Box,
   Button,
+  Container,
   FormControl,
   FormHelperText,
   Input,
@@ -115,7 +116,7 @@ export default function ContactForm() {
         message={"Message Sent"}
       />
 
-      <FormControl variant="standard">
+      <FormControl variant="standard" sx={{ width: `50%` }}>
         <InputLabel
           htmlFor="component-simple"
           color="secondary"
@@ -136,7 +137,7 @@ export default function ContactForm() {
           {errors.name}
         </FormHelperText>
       </FormControl>
-      <FormControl variant="standard">
+      <FormControl variant="standard" sx={{ width: `50%` }}>
         <InputLabel
           htmlFor="component-simple"
           color="secondary"
@@ -176,19 +177,8 @@ export default function ContactForm() {
           sx={typographyStyle}
         />
       </FormControl>
-      <Button
-        disabled={disableSubmit}
-        type="submit"
-        variant="contained"
-        color="secondary"
-        sx={{
-          boxShadow: `none`,
-          textTransform: `none`,
-          fontFamily: `Fjalla One`,
-          px: 3,
-          mt: 2,
-        }}
-      >
+
+      <Button disabled={disableSubmit} type="submit" fullWidth>
         Submit
       </Button>
     </Box>

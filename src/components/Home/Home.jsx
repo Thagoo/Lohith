@@ -1,9 +1,18 @@
 import React, { useEffect, useRef, useState } from "react";
 import { TypeAnimation } from "react-type-animation";
-import { Box, Grid, Slide, Paper, Typography, Fade } from "@mui/material";
+import {
+  Box,
+  Grid,
+  Slide,
+  Paper,
+  Typography,
+  Fade,
+  Container,
+  IconButton,
+} from "@mui/material";
 import Sidebar from "./Sidebar";
 import hero from "../../assets/hero.jpg";
-import Footer from "../Footer/Footer";
+import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 function Home() {
   const [firstAnimationFinished, setFirstAnimationFinished] = useState(false);
@@ -35,9 +44,12 @@ function Home() {
           md={8}
           sx={{
             bgcolor: `#e4e4e2`,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-          {" "}
           <Box p="10px">
             <Fade in direction="right">
               <Typography
@@ -116,6 +128,36 @@ function Home() {
                 </Typography>
               </Slide>
             </Box>
+            <Box
+              sx={{
+                bgcolor: `#e4e4e2`,
+                display: "flex",
+                justifyContent: "center",
+              }}
+            >
+              <Fade
+                in
+                style={{ transformOrigin: "0 0 0" }}
+                {...{ timeout: 2000 }}
+              >
+                <div>
+                  <IconButton href="https://github.com/thagoo">
+                    <FaGithub color="#222" />
+                  </IconButton>
+                </div>
+              </Fade>
+              <Fade
+                in
+                style={{ transformOrigin: "0 0 0" }}
+                {...{ timeout: 2000 }}
+              >
+                <div>
+                  <IconButton href="https://www.linkedin.com/in/lohith-295814233/">
+                    <FaLinkedin color="#222" />
+                  </IconButton>
+                </div>
+              </Fade>
+            </Box>
           </Box>
         </Grid>
         <Grid
@@ -134,7 +176,6 @@ function Home() {
           </Box>
         </Grid>
       </Grid>
-      <Footer />
     </>
   );
 }

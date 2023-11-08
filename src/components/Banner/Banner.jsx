@@ -1,8 +1,6 @@
 import React from "react";
-import { Box, Grid, Paper } from "@mui/material";
-import Sidebar from "../Home/Sidebar";
+import { Box, Grid, Paper, Slide } from "@mui/material";
 import hero from "../../assets/hero.jpg";
-import Footer from "../Footer/Footer";
 
 function Banner({ children }) {
   return (
@@ -17,18 +15,14 @@ function Banner({ children }) {
           md={3}
           p="20px"
           sx={{
-            bgcolor: `#e4e4e2`,
-
             display: "flex",
+            bgcolor: `#e4e4e2`,
             justifyContent: "center",
           }}
         >
-          <Box>
-            <img src={hero} alt="test" style={{ height: `50vh` }} />
-          </Box>
+          <img src={hero} alt="test" style={{ height: `50vh` }} />
         </Grid>
       </Grid>
-      <Footer />
     </>
   );
 }

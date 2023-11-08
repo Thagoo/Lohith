@@ -6,7 +6,8 @@ import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Contact from "./components/Contact/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import More from "./components/More/More";
+import Career from "./components/Career/Career";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -35,15 +36,16 @@ function App() {
               }
             />
             <Route
-              path="/more/:moreType"
+              path="/career/:careerType"
               element={
                 <Banner>
-                  <More />
+                  <Career />
                 </Banner>
               }
             />
           </Routes>
         </BrowserRouter>
+        <Footer />
       </Container>
     </>
   );
