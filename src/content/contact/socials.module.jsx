@@ -1,4 +1,4 @@
-import { IconButton, List, ListItem, ListItemButton } from "@mui/material";
+import { Box, IconButton, List, ListItem, ListItemButton } from "@mui/material";
 import React from "react";
 import {
   FaDiscord,
@@ -21,65 +21,47 @@ const useStyles = makeStyles((theme) => ({
 function Socials() {
   const classes = useStyles();
 
-  const socials = [
-    <FaInstagram className={classes.Icon} />,
-    <FaFacebook className={classes.Icon} />,
+  const socialMediaLinks = [
+    {
+      icon: <FaInstagram className={classes.Icon} />,
+      href: "https://instagram.com/l_0hit",
+    },
+    {
+      icon: <FaTelegram className={classes.Icon} />,
+      href: "https://t.me/thagoo",
+    },
+    {
+      icon: <FaDiscord className={classes.Icon} />,
+      href: "https://discord.com/users/thago#3372",
+    },
+    {
+      icon: <FaReddit className={classes.Icon} />,
+      href: "https://www.reddit.com/user/No_Dig6944",
+    },
+    {
+      icon: <FaLinkedin className={classes.Icon} />,
+      href: "https://www.linkedin.com/in/lohith-295814233/",
+    },
+    {
+      icon: <FaGithub className={classes.Icon} />,
+      href: "https://github.com/thagoo",
+    },
   ];
+
   return (
     <>
-      <List style={{ width: "100%" }}>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          <div style={{ width: "20%" }}>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {socialMediaLinks.map((link, index) => (
+          <Box key={index} sx={{ width: { xs: "40%", md: "15%" } }}>
             <IconButton
-              href="https://instagram.com/l_0hit"
-              sx={{ width: "100%", color: `inherit` }}
+              href={link.href}
+              sx={{ width: "100%", color: "inherit" }}
             >
-              <FaInstagram className={classes.Icon} />
+              {link.icon}
             </IconButton>
-          </div>
-
-          <div style={{ width: "20%" }}>
-            <IconButton
-              href="https://t.me/thagoo"
-              sx={{ width: "100%", color: `inherit` }}
-            >
-              <FaTelegram className={classes.Icon} />
-            </IconButton>
-          </div>
-          <div style={{ width: "20%" }}>
-            <IconButton
-              href="https://discord.com/users/thago#3372"
-              sx={{ width: "100%", color: `inherit` }}
-            >
-              <FaDiscord className={classes.Icon} />
-            </IconButton>
-          </div>
-          <div style={{ width: "20%" }}>
-            <IconButton
-              href="https://www.reddit.com/user/No_Dig6944"
-              sx={{ width: "100%", color: `inherit` }}
-            >
-              <FaReddit className={classes.Icon} />
-            </IconButton>
-          </div>
-          <div style={{ width: "20%" }}>
-            <IconButton
-              href="https://www.linkedin.com/in/lohith-295814233/"
-              sx={{ width: "100%", color: `inherit` }}
-            >
-              <FaLinkedin className={classes.Icon} />
-            </IconButton>
-          </div>
-          <div style={{ width: "20%" }}>
-            <IconButton
-              href="https://github.com/thagoo"
-              sx={{ width: "100%", color: `inherit` }}
-            >
-              <FaGithub className={classes.Icon} />
-            </IconButton>
-          </div>
-        </div>
-      </List>
+          </Box>
+        ))}
+      </div>
     </>
   );
 }

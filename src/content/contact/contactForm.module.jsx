@@ -116,7 +116,7 @@ export default function ContactForm() {
         message={"Message Sent"}
       />
 
-      <FormControl variant="standard" sx={{ width: `50%` }}>
+      <FormControl variant="standard" sx={{ width: { xs: "100%", md: "50%" } }}>
         <InputLabel
           htmlFor="component-simple"
           color="secondary"
@@ -137,7 +137,7 @@ export default function ContactForm() {
           {errors.name}
         </FormHelperText>
       </FormControl>
-      <FormControl variant="standard" sx={{ width: `50%` }}>
+      <FormControl variant="standard" sx={{ width: { xs: "100%", md: "50%" } }}>
         <InputLabel
           htmlFor="component-simple"
           color="secondary"

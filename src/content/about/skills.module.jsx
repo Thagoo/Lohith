@@ -1,4 +1,4 @@
-import { List } from "@mui/material";
+import { Box, List } from "@mui/material";
 import React from "react";
 import {
   FaLinux,
@@ -45,13 +45,13 @@ function Skills() {
 
   return (
     <>
-      <List style={{ width: "100%" }}>
-        <div style={{ display: "flex", flexWrap: "wrap" }}>
-          {Icons.map((icon) => (
-            <div style={{ width: "15%", padding: "8px" }}>{icon}</div>
-          ))}
-        </div>
-      </List>
+      <div style={{ display: "flex", flexWrap: "wrap" }}>
+        {Icons.map((icon) => (
+          <Box sx={{ width: { xs: "10vh", md: "15vh" }, padding: "8px" }}>
+            {icon}
+          </Box>
+        ))}
+      </div>
     </>
   );
 }

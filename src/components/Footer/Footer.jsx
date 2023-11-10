@@ -1,4 +1,5 @@
 import {
+  Box,
   Container,
   Fade,
   IconButton,
@@ -11,15 +12,14 @@ import { FaGithub } from "react-icons/fa6";
 function Footer() {
   return (
     <>
-      <Container
+      <Box
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
           bgcolor: `#3d2d43`,
-          height: `25vh`,
-          p: 2,
+          height: `100%`,
         }}
       >
         <Typography
@@ -55,7 +55,7 @@ function Footer() {
         >
           ©2023 Lohith. All rights reserved.{" "}
         </Typography>
-      </Container>
+      </Box>
     </>
   );
 }

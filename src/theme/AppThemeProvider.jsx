@@ -13,7 +13,7 @@ const theme = createTheme({
   typography: {
     allVariants: {
       fontFamily:
-        "Cormorant,sans-serif,Arial,roboto,Fjalla One,Monospace,Bebas Neue ",
+        "Fjalla One,Cormorant,sans-serif,Arial,roboto,Monospace,Bebas Neue ",
       textTransform: "none",
     },
   },
@@ -46,8 +46,8 @@ const theme = createTheme({
           color: "#F8DFFF",
           background:
             "linear-gradient(to right bottom, #3d2d43, #47324f, #52375b, #5d3b67, #684073);",
-          px: 10,
-          py: 1,
+          px: "48px",
+          py: "96",
         },
       },
     },

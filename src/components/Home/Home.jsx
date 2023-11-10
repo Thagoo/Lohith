@@ -9,12 +9,15 @@ import {
   Fade,
   Container,
   IconButton,
+  useMediaQuery,
 } from "@mui/material";
 import Sidebar from "./Sidebar";
 import hero from "../../assets/hero.jpg";
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 function Home() {
+  const mobile = !useMediaQuery("(min-width:600px)");
+
   const [firstAnimationFinished, setFirstAnimationFinished] = useState(false);
   const containerRef = useRef(null);
 
@@ -32,17 +35,18 @@ function Home() {
       <Grid
         container
         component={Paper}
-        square
         elevation={10}
         direction="row"
         justifyContent="center"
         alignItems="center"
+        sx={{ flex: 1 }}
       >
         <Grid
           item
           xs={12}
           md={8}
           sx={{
+            height: { xs: "40vh", md: "auto" },
             bgcolor: `#e4e4e2`,
             display: "flex",
             flexDirection: "column",
@@ -163,17 +167,23 @@ function Home() {
         <Grid
           item
           xs={12}
+          component={Container}
           md={4}
-          p="10px"
+          py="10px"
           sx={{
             bgcolor: `#e4e4e2`,
             display: "flex",
             justifyContent: "center",
           }}
         >
-          <Box p="15px">
-            <img src={hero} alt="test" style={{ height: `55vh` }} />
-          </Box>
+          <img
+            src={hero}
+            alt="test"
+            style={{
+              height: mobile ? "55vh" : "20rem",
+              borderRadius: mobile ? "24px" : "1px",
+            }}
+          />
         </Grid>
       </Grid>
     </>

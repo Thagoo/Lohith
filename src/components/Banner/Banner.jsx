@@ -5,17 +5,16 @@ import hero from "../../assets/hero.jpg";
 function Banner({ children }) {
   return (
     <>
-      <Grid container component={Paper} square elevation={10}>
+      <Grid container component={Paper} square elevation={10} sx={{ flex: 1 }}>
         <Grid item xs={12} md={9}>
           {children}
         </Grid>
         <Grid
           item
-          xs={12}
           md={3}
           p="20px"
           sx={{
-            display: "flex",
+            display: { xs: "none", md: "flex" },
             bgcolor: `#e4e4e2`,
             justifyContent: "center",
           }}

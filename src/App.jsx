@@ -8,13 +8,24 @@ import Contact from "./components/Contact/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Career from "./components/Career/Career";
 import Footer from "./components/Footer/Footer";
+import useMediaQuery from "@mui/material/useMediaQuery";
 
 function App() {
+  const mobile = !useMediaQuery("(min-width:600px)");
   return (
     <>
       <CssBaseline />
-      <Container maxWidth="lg">
-        <BrowserRouter>
+
+      <BrowserRouter>
+        <Container
+          maxWidth="lg"
+          disableGutters={mobile}
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            minHeight: "100vh",
+          }}
+        >
           <Header />
           <Routes>
             <Route exact path="/" element={<Home />} />
@@ -44,9 +55,9 @@ function App() {
               }
             />
           </Routes>
-        </BrowserRouter>
-        <Footer />
-      </Container>
+          <Footer />
+        </Container>
+      </BrowserRouter>
     </>
   );
 }

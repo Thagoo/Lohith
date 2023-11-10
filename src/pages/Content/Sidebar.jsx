@@ -2,9 +2,9 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import { careerContent } from "../../content/career/career";
+import { aboutContent } from "../../content/about/about";
 
-function Sidebar() {
+function Sidebar({ section, options }) {
   const preventDefault = (event) => event.preventDefault();
 
   return (
@@ -12,6 +12,7 @@ function Sidebar() {
       <Box p="10px">
         <Typography
           sx={{
+            display: { xs: "none" },
             color: "#333",
             fontWeight: `600`,
             textTransform: `uppercase`,
@@ -30,9 +31,9 @@ function Sidebar() {
           }}
           onClick={preventDefault}
         >
-          {careerContent.map((career) => (
+          {options.map((option) => (
             <NavLink
-              to={`/career/${career.key}`}
+              to={`/${section}/${option.key}`}
               style={({ isActive }) => ({
                 color: isActive ? "#a27eaf" : "white",
               })}
@@ -45,7 +46,7 @@ function Sidebar() {
                 }}
                 underline="hover"
               >
-                {career.key}
+                {option.key}
               </Link>
             </NavLink>
           ))}
