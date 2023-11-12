@@ -2,7 +2,6 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import { Link } from "@mui/material";
 import { NavLink } from "react-router-dom";
-import { aboutContent } from "../../content/about/about";
 
 function Sidebar({ section, options }) {
   const preventDefault = (event) => event.preventDefault();
@@ -12,7 +11,7 @@ function Sidebar({ section, options }) {
       <Box p="10px">
         <Typography
           sx={{
-            display: { xs: "none" },
+            display: { xs: "none", md: "block" },
             color: "#333",
             fontWeight: `600`,
             textTransform: `uppercase`,

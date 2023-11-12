@@ -3,7 +3,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import { CardActionArea, Grid } from "@mui/material";
+import { CardActionArea, Container, Grid, Paper } from "@mui/material";
 import studhub from "../../assets/studhub.png";
 import bookease from "../../assets/bookease.png";
 import todo from "../../assets/todo.png";
@@ -42,14 +42,16 @@ const typographyStyle = {
 };
 export default function Projects() {
   return (
-    <Grid
-      container
-      spacing={2}
-      sx={{ maxHeight: `80vh`, overflow: "scroll", mt: 4 }}
-    >
+    <Grid container spacing={2}>
       {projects.map((project) => (
         <Grid item>
-          <Card sx={{ maxWidth: 300, bgcolor: "#f3f6f9" }}>
+          <Card
+            sx={{
+              maxWidth: { xs: 350, md: 300 },
+              bgcolor: "#f3f6f9",
+              boxShadow: 5,
+            }}
+          >
             <CardActionArea href={project.url} target="_blank">
               <CardMedia
                 component="img"

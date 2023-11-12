@@ -1,21 +1,21 @@
 import React from "react";
 import Header from "./components/Header/Header";
 import { Container, CssBaseline } from "@mui/material";
-import Banner from "./components/Banner/Banner";
 import Home from "./components/Home/Home";
-import About from "./components/About/About";
-import Contact from "./components/Contact/Contact";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Career from "./components/Career/Career";
 import Footer from "./components/Footer/Footer";
 import useMediaQuery from "@mui/material/useMediaQuery";
+import ContentLoader from "./pages/Content/ContentLoader";
+import { aboutContent } from "./content/about/about";
+import { contactContent } from "./content/contact/contact";
+import { careerContent } from "./content/career/career";
 
 function App() {
   const mobile = !useMediaQuery("(min-width:600px)");
+
   return (
     <>
       <CssBaseline />
-
       <BrowserRouter>
         <Container
           maxWidth="lg"
@@ -30,28 +30,22 @@ function App() {
           <Routes>
             <Route exact path="/" element={<Home />} />
             <Route
-              path="/about/:aboutType"
+              path="/about/:contentType"
               element={
-                <Banner>
-                  <About />
-                </Banner>
+                <ContentLoader section={"about"} contents={aboutContent} />
               }
             ></Route>
 
             <Route
-              path="/contact/:contactType"
+              path="/contact/:contentType"
               element={
-                <Banner>
-                  <Contact />
-                </Banner>
+                <ContentLoader section={"contact"} contents={contactContent} />
               }
             />
             <Route
-              path="/career/:careerType"
+              path="/career/:contentType"
               element={
-                <Banner>
-                  <Career />
-                </Banner>
+                <ContentLoader section={"career"} contents={careerContent} />
               }
             />
           </Routes>
