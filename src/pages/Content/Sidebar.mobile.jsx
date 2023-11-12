@@ -34,6 +34,7 @@ export default function SidebarMobile({
         display: "none",
       },
       "& .MuiDrawer-paper": {
+        overflow: "hidden",
         width: 100,
         position: "absolute",
         height: height,
@@ -99,7 +100,7 @@ export default function SidebarMobile({
             <NavLink
               to={`/${section}/${option.key}`}
               style={({ isActive }) => ({
-                color: isActive ? "#a27eaf" : "white",
+                textDecoration: isActive ? "underline" : "none",
               })}
             >
               <Link

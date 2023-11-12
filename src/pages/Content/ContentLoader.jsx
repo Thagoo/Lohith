@@ -6,6 +6,7 @@ import {
   Paper,
   Typography,
   styled,
+  useMediaQuery,
 } from "@mui/material";
 import React, { useEffect, useRef, useState } from "react";
 import Sidebar from "./Sidebar";
@@ -18,14 +19,14 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
   ({ theme, open }) => ({
     flexGrow: 1,
     transition: theme.transitions.create("margin", {
-      easing: theme.transitions.easing.sharp,
-      duration: theme.transitions.duration.leavingScreen,
+      easing: theme.transitions.easing.easeOut,
+      duration: theme.transitions.duration.shortest,
     }),
     marginLeft: `100px`,
     ...(open && {
       transition: theme.transitions.create("margin", {
-        easing: theme.transitions.easing.easeOut,
-        duration: theme.transitions.duration.enteringScreen,
+        easing: theme.transitions.easing.easeIn,
+        duration: theme.transitions.duration.shortest,
       }),
       marginLeft: 0,
     }),
@@ -33,6 +34,8 @@ const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(
 );
 
 function ContentLoader({ section, contents }) {
+  const mobile = !useMediaQuery("(min-width:600px)");
+
   const [open, setOpen] = React.useState(false);
   const { contentType } = useParams();
   const theme = useTheme();
@@ -58,22 +61,27 @@ function ContentLoader({ section, contents }) {
         sx={{ flex: 1 }}
         ref={containerRef}
       >
-        <Grid item md={1.5} xs={0}>
-          <Box sx={{ display: { xs: "none", md: "block" } }}>
-            <Sidebar section={section} options={contents} />
-          </Box>
-        </Grid>
+        {!mobile && (
+          <Grid item md={1.5} xs={0}>
+            <Box sx={{ display: { xs: "none", md: "block" } }}>
+              <Sidebar section={section} options={contents} />
+            </Box>
+          </Grid>
+        )}
         <Grid item md={7} xs={12} sx={{ display: "flex" }}>
-          <Box sx={{ display: { xs: "block", md: "none" } }}>
-            <SidebarMobile
-              section={section}
-              options={contents}
-              containerHeight={containerHeight}
-              setOpen={setOpen}
-              open={open}
-            />
-          </Box>
-          <Main open={open} sx={{ p: 1 }}>
+          {mobile && (
+            <Box sx={{ display: { xs: "block", md: "none" } }}>
+              <SidebarMobile
+                section={section}
+                options={contents}
+                containerHeight={containerHeight}
+                setOpen={setOpen}
+                open={open}
+              />
+            </Box>
+          )}
+
+          <Main open={!open} sx={{ p: 1 }}>
             <Typography
               variant="h6"
               sx={{
