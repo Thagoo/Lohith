@@ -58,8 +58,8 @@ function ContentLoader({ section, contents }) {
         component={Paper}
         square
         elevation={10}
-        sx={{ flex: 1 }}
         ref={containerRef}
+        sx={{ flex: 1 }}
       >
         {!mobile && (
           <Grid item md={1.5} xs={0}>
@@ -68,7 +68,7 @@ function ContentLoader({ section, contents }) {
             </Box>
           </Grid>
         )}
-        <Grid item md={7} xs={12} sx={{ display: "flex" }}>
+        <Grid item md={7} xs={12} sx={{ display: "flex", bgcolor: "#FBF9F7" }}>
           {mobile && (
             <Box sx={{ display: { xs: "block", md: "none" } }}>
               <SidebarMobile

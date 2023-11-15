@@ -29,7 +29,7 @@ const projects = [
     image: todo,
     title: "Simple-ToDo",
     description:
-      "A Simple ToDo app with Material UI Career focused on backend code",
+      "A Simple ToDo app with Material UI more focused on backend code",
     url: "https://github.com/Thagoo/MERN-TODO",
   },
 ];
@@ -42,7 +42,7 @@ const typographyStyle = {
 };
 export default function Projects() {
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} p={1}>
       {projects.map((project) => (
         <Grid item>
           <Card

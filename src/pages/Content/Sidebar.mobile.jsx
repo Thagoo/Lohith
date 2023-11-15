@@ -8,7 +8,7 @@ import Toolbar from "@mui/material/Toolbar";
 import List from "@mui/material/List";
 import Typography from "@mui/material/Typography";
 import IconButton from "@mui/material/IconButton";
-import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
+import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import { Link } from "@mui/material";
 import { NavLink } from "react-router-dom";
@@ -83,7 +83,7 @@ export default function SidebarMobile({
       >
         <Box sx={{ display: "flex", justifyContent: "end" }}>
           <IconButton onClick={handleDrawerClose}>
-            <ChevronLeftIcon />
+            <CloseRoundedIcon />
           </IconButton>
         </Box>
         <Container

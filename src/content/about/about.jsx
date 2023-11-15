@@ -14,7 +14,7 @@ export const aboutContent = [
     content: (
       <>
         <List>
-          <ListItem sx={{ pl: 0, pb: 2 }}>
+          <ListItem>
             <Typography
               variant="h5"
               sx={{
@@ -84,9 +84,7 @@ export const aboutContent = [
     title: "@thagoo",
     content: `"Thagoo" began as a whimsical username chosen in childhood, primarily to attract attention. Little did I know that this seemingly playful decision would evolve into a crucial element of my online identity across platforms like Telegram, GitHub, and XDA.
 
-    As a young explorer of the digital world, "Thagoo" quickly became my online alter ego. It was the name I used to introduce myself, share thoughts, and engage with communities. Over time, it garnered recognition and trust, becoming a symbol of my dedication and passion, particularly on GitHub, where I contributed to open-source projects, and on XDA, where I participated in Android discussions.
-    
-    "Thagoo" transcended being just a username; it became a digital legacy, a reminder of my online journey. Across platforms, it created a sense of consistency and familiarity, forming connections and sparking conversations. "Thagoo" wasn't merely a name; it was the embodiment of my presence and contributions in the vast, ever-expanding online universe.`,
+    As a young explorer of the digital world, "Thagoo" quickly became my online alter ego. `,
   },
   {
     key: "skills",
@@ -96,7 +94,15 @@ export const aboutContent = [
   {
     key: "language",
     title: "Spoken Languages",
-    content: `My mother tongue is Kannada, I am fluent in English and I can understand Hindi`,
+    content: (
+      <>
+        <ul>
+          <li>My mother tongue is Kannada</li>
+          <li>I am fluent in English</li>
+          <li>I can understand Hindi</li>
+        </ul>
+      </>
+    ),
   },
 
   {
