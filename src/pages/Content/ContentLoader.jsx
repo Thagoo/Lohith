@@ -1,8 +1,6 @@
 import {
   Box,
-  Container,
   Grid,
-  Grow,
   Paper,
   Typography,
   styled,
@@ -12,7 +10,6 @@ import React, { useEffect, useRef, useState } from "react";
 import Sidebar from "./Sidebar";
 import SidebarMobile from "./Sidebar.mobile";
 import { useTheme } from "@mui/styles";
-import hero from "../../assets/hero.jpg";
 import { useParams } from "react-router-dom";
 
 const Main = styled("main", { shouldForwardProp: (prop) => prop !== "open" })(

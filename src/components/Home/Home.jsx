@@ -1,5 +1,4 @@
 import React, { useEffect, useRef, useState } from "react";
-import { TypeAnimation } from "react-type-animation";
 import {
   Box,
   Grid,
@@ -11,8 +10,7 @@ import {
   IconButton,
   useMediaQuery,
 } from "@mui/material";
-import Sidebar from "./Sidebar";
-import hero from "../../assets/hero.jpg";
+
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
 
 function Home() {
