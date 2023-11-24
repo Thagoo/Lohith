@@ -122,7 +122,11 @@ function ContentLoader({ section, contents }) {
             justifyContent: "center",
           }}
         >
-          <img src={hero} alt="hero" style={{ height: `50vh` }} />
+          <img
+            src="https://avatars.githubusercontent.com/u/47388359?v=4"
+            alt="hero"
+            style={{ height: `50vh` }}
+          />
         </Grid>
       </Grid>
     </>

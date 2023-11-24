@@ -177,7 +177,7 @@ function Home() {
           }}
         >
           <img
-            src={hero}
+            src="https://avatars.githubusercontent.com/u/47388359?v=4"
             alt="test"
             style={{
               height: mobile ? "55vh" : "20rem",
