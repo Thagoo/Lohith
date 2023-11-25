@@ -9,9 +9,12 @@ import {
   Container,
   IconButton,
   useMediaQuery,
+  Skeleton,
 } from "@mui/material";
 
 import { FaGithub, FaLinkedin } from "react-icons/fa6";
+
+const image = "https://avatars.githubusercontent.com/u/47388359?v=4";
 
 function Home() {
   const mobile = !useMediaQuery("(min-width:600px)");
@@ -174,14 +177,19 @@ function Home() {
             justifyContent: "center",
           }}
         >
-          <img
-            src="https://avatars.githubusercontent.com/u/47388359?v=4"
-            alt="test"
-            style={{
-              height: mobile ? "55vh" : "20rem",
-              borderRadius: mobile ? "24px" : "1px",
-            }}
-          />
+          {image ? (
+            <img
+              src={image}
+              alt="display picture"
+              style={{
+                marginBottom: "20px",
+                height: "20rem",
+                borderRadius: mobile ? "24px" : "1px",
+              }}
+            />
+          ) : (
+            <Skeleton variant="rectangular" width={"45dvh"} height={"45dvh"} />
+          )}
         </Grid>
       </Grid>
     </>
